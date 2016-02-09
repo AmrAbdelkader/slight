@@ -1,0 +1,192 @@
+{
+  "extends" : "thirdParty.api",
+  "abstract" : false,
+  "root" : "https://masdarengine.appspot.com/_ah/api",
+  "name" : "followersendpoint",
+  "version" : "v1",
+  "defaultVersion" : false,
+  "adapter" : {
+    "bns" : "https://masdarengine.appspot.com/_ah/spi",
+    "deadline" : 10.0,
+    "type" : "lily"
+  },
+  "auth" : {
+    "allowCookieAuth" : false
+  },
+  "frontendLimits" : {
+    "unregisteredUserQps" : -1,
+    "unregisteredQps" : -1,
+    "unregisteredDaily" : -1,
+    "rules" : [ ]
+  },
+  "cacheControl" : {
+    "type" : "no-cache",
+    "maxAge" : 0
+  },
+  "ownerDomain" : "masdar.com",
+  "ownerName" : "masdar.com",
+  "packagePath" : "entities",
+  "methods" : {
+    "followersendpoint.insertFollowers" : {
+      "path" : "followers",
+      "httpMethod" : "POST",
+      "scopes" : [ ],
+      "audiences" : [ ],
+      "clientIds" : [ ],
+      "rosyMethod" : "com.masdar.entities.FollowersEndpoint.insertFollowers",
+      "request" : {
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "followersendpoint.listFollowers" : {
+      "path" : "followers",
+      "httpMethod" : "GET",
+      "scopes" : [ ],
+      "audiences" : [ ],
+      "clientIds" : [ ],
+      "rosyMethod" : "com.masdar.entities.FollowersEndpoint.listFollowers",
+      "request" : {
+        "parameters" : {
+          "cursor" : {
+            "type" : "string",
+            "required" : false
+          },
+          "limit" : {
+            "type" : "int32",
+            "required" : false
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "followersendpoint.getFollowers" : {
+      "path" : "followers/{id}",
+      "httpMethod" : "GET",
+      "scopes" : [ ],
+      "audiences" : [ ],
+      "clientIds" : [ ],
+      "rosyMethod" : "com.masdar.entities.FollowersEndpoint.getFollowers",
+      "request" : {
+        "parameters" : {
+          "id" : {
+            "type" : "int64",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "followersendpoint.removeFollowers" : {
+      "path" : "followers/{id}",
+      "httpMethod" : "DELETE",
+      "scopes" : [ ],
+      "audiences" : [ ],
+      "clientIds" : [ ],
+      "rosyMethod" : "com.masdar.entities.FollowersEndpoint.removeFollowers",
+      "request" : {
+        "parameters" : {
+          "id" : {
+            "type" : "int64",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "empty"
+      }
+    },
+    "followersendpoint.updateFollowers" : {
+      "path" : "followers",
+      "httpMethod" : "PUT",
+      "scopes" : [ ],
+      "audiences" : [ ],
+      "clientIds" : [ ],
+      "rosyMethod" : "com.masdar.entities.FollowersEndpoint.updateFollowers",
+      "request" : {
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    }
+  },
+  "descriptor" : {
+    "schemas" : {
+      "Followers" : {
+        "id" : "Followers",
+        "type" : "object",
+        "properties" : {
+          "follower_id" : {
+            "type" : "string",
+            "format" : "int64"
+          },
+          "following_user" : {
+            "type" : "string",
+            "format" : "int64"
+          },
+          "follower_user" : {
+            "type" : "string",
+            "format" : "int64"
+          }
+        }
+      },
+      "CollectionResponse_Followers" : {
+        "id" : "CollectionResponse_Followers",
+        "type" : "object",
+        "properties" : {
+          "items" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "Followers"
+            }
+          },
+          "nextPageToken" : {
+            "type" : "string"
+          }
+        }
+      }
+    },
+    "methods" : {
+      "com.masdar.entities.FollowersEndpoint.insertFollowers" : {
+        "request" : {
+          "$ref" : "Followers"
+        },
+        "response" : {
+          "$ref" : "Followers"
+        }
+      },
+      "com.masdar.entities.FollowersEndpoint.listFollowers" : {
+        "response" : {
+          "$ref" : "CollectionResponse_Followers"
+        }
+      },
+      "com.masdar.entities.FollowersEndpoint.getFollowers" : {
+        "response" : {
+          "$ref" : "Followers"
+        }
+      },
+      "com.masdar.entities.FollowersEndpoint.removeFollowers" : {
+      },
+      "com.masdar.entities.FollowersEndpoint.updateFollowers" : {
+        "request" : {
+          "$ref" : "Followers"
+        },
+        "response" : {
+          "$ref" : "Followers"
+        }
+      }
+    }
+  }
+}

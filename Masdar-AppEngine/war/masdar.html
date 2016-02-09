@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="ISO-8859-1">
+		<title>Masdar App</title>
+		<script src="js/jquery/jquery.js" type="text/javascript"></script>
+		<script src="js/back-stack.js" type="text/javascript"></script>
+		<script src="js/masdar-script.js" type="text/javascript"></script>
+		<script src="js/user/user-model.js" type="text/javascript"></script>
+		<script src="js/user/user-view.js" type="text/javascript"></script>
+		<script src="js/follower/follower-model.js" type="text/javascript"></script>
+		<script src="js/follower/follower-view.js" type="text/javascript"></script>
+		<script src="js/gcm/gcm-script.js" type="text/javascript"></script>
+		<script type="text/javascript">
+		//var gapi;	
+		loadGapi();
+		</script>
+	</head>
+	<body onhashchange="handleHashChange();">
+		
+		<div id="mainContent">
+			<h3>welcome inside Masdar App</h3>
+			<input type="hidden" id="userIdHidden" />
+			<button id="ideaButton">Idea Category</button>
+			<button id="designButton">Design Category</button>
+			<button id="socialButton">Social Category</button>
+			<button id="animationButton">Animation Category</button>
+			<button id="loadButton">Load data</button>
+			<button id="sendButton">Send Message</button>
+			<button id="previewButton">Open Animation Preview</button>
+			<a href="#link1">Link 1</a>
+			<a href="#link2">Link 2</a>
+			<button id="commentButton">Write Comment</button>
+			<input type="text" size="20" id="commentText" /><input type="button" id="postComment" value="Post" />
+			<div id="keyContent"></div>
+		</div>
+		<script src="https://apis.google.com/js/client.js?onload=loadGapi">
+			  {
+			    "client": {},
+			      "googleapis.config": {
+			        root: 'https://masdarengine.appspot.com/_ah/api'
+			      }
+			  }
+  		</script>
+	</body>
+</html>

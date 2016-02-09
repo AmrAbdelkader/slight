@@ -1,0 +1,296 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+a{
+	text-decoration: none;
+}
+
+ @font-face {font-family:"KabaleMedium Normal";src:url("../fonts/KabaleMedium-Normal.eot?") format("eot"),url("../fonts/KabaleMedium-Normal.woff") format("woff"),url("../fonts/KabaleMedium-Normal.ttf") format("truetype"),url("../fonts/KabaleMedium-Normal.svg#KabaleMediumNormal") format("svg");font-weight:normal;font-style:normal;}
+
+
+/*=======================================
+=            Main page style            =
+=======================================*/
+body{
+	font-family:"KabaleMedium Normal";
+}
+.container{
+	width:1080px;
+
+	.header{
+		.top{
+			background:url(../images/head_bg.png) repeat-x;
+			height: 82px;
+			padding-top:25px;
+			padding-bottom: 25px;
+			h1{
+				 background: url("../images/appico.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+			    color: #FFFFFF;
+			    font-family: "KabaleMedium Normal";
+			    font-size: 33px;
+			    padding-bottom: 25px;
+			    padding-left: 65px;
+			    padding-top: 20px;
+				
+			}
+			.title{
+				float:left;
+				display: block;
+				margin-right: 240px;
+				
+			}
+
+			ul{
+				float:left;
+				background:url(../images/btn-bg.png) repeat-x;
+				width:366px;
+				border: 1px solid #2b323b;
+				border-radius: 5px;
+				li{
+					border-right: 1px solid #2B323B;
+				    display: inline-block;
+				    
+				    
+					&:last-child{
+						border:none;
+						margin-left:-4px;
+						width:183px;
+						
+					}
+
+					a{
+						display: block;
+
+				    	text-align: center;
+				    	padding:26px 62px;
+				    	color:#681a69;
+				    	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.87);
+
+				    	&:hover, &:active, &:focus{
+				    		background:url(../images/btn_hover.png) repeat-x;
+				    		color:#fff;
+				    		text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.87);
+				    	}
+
+					}
+
+				}
+			}
+
+			.edit{
+				border-left: 2px solid #D752D8;
+			    display: block;
+			    float: right;
+			    margin-bottom: 0;
+			    margin-right: 30px;
+			    margin-top: -25px;
+			    padding-bottom: 18px;
+			    padding-left: 40px;
+			    padding-top: 25px;
+			}
+
+		}
+
+		.menu{
+			background:url(../images/menubg.png) repeat-x;
+			height: 159px;
+			position: relative;
+
+			ul{
+				li{
+					display: inline-block;
+					width:24.7%;
+					text-align: center;
+					padding-top:30px;
+					-webkit-box-sizing: border-box; 
+					-moz-box-sizing: border-box;    
+					box-sizing: border-box;         
+					a{
+						display: block;
+						padding-bottom: 14px;
+						position: relative;
+						-webkit-transition: left 1.5s;
+						-moz-transition: left 1.5s;
+						-o-transition: left 1.5s;
+						transition: left 1.5s;
+
+					}
+					.idea:hover{
+						border-bottom: 8px solid #ae41b0;
+					}
+					.design:hover{
+						border-bottom: 8px solid #bc2d2d;	
+					}
+
+					.social:hover{
+						border-bottom: 8px solid #3d79b1;	
+					}
+					.animation:hover{
+						border-bottom: 8px solid #ebc132;	
+					}
+				}
+			}
+		}
+	}
+
+	.main-content{
+		background:url(../images/bg.jpg) repeat-y;
+		padding-top:25px;
+		padding-left:30px;
+		padding-right:30px;
+		overflow: hidden;
+		
+		.item{
+			position: relative;
+			float: left;
+			margin-bottom: 40px;
+			.profile{
+				background: url(../images/profilebg.png) repeat-x;
+				height: 121px;
+				width: 413px;
+				position: absolute;
+				z-index: 2;
+				bottom: 68px;
+				left: 24px;
+				padding-top: 22px;
+				-webkit-box-sizing: border-box; 
+					-moz-box-sizing: border-box;    
+					box-sizing: border-box;   
+
+				img{
+					width: 68px;
+					height: 68px;
+					border: 5px solid #961398;
+					float:left;
+					margin-left:17px;	
+				}
+
+				h1{
+					font-family:"KabaleMedium Normal";
+					font-size: 35px;
+					color:#fff;
+					font-weight: normal;
+					padding-top: 15px;
+					padding-left:15px;
+					float:left;
+				}
+
+				span{
+					font-size: 50px;
+					font-family:"KabaleMedium Normal";
+					color:#fff;
+					float:right;
+					display: block;
+					margin-right:30px;
+					margin-top:15px;
+				}
+			}
+			.bgimg{
+				height: 730px;
+				width: 413px;
+				left: 24px;
+				border-radius: 2px;
+				top: 74px;
+				position: absolute;
+				z-index: 1;
+			}
+		}
+
+
+		.ideaitem{
+			background:url(../images/idea_bg.png) no-repeat;
+			height:872px;
+			width:460px;
+			margin-right:83px;
+		}
+
+		.animationitem{
+			background:url(../images/animation_bg.png) no-repeat;
+			height:872px;
+			width:460px;
+
+			.profile{
+				img{
+					border: 5px solid #f7c106;
+				}
+			}
+		}
+
+		.socialitem{
+			background: url(../images/social_bg.png) no-repeat;
+			height:872px;
+			width:460px;
+			margin-right:83px;
+
+			.profile{
+				img{
+					border: 5px solid #3b7ebc;
+				}
+			}
+		}
+
+		.designitem{
+			background: url(../images/design_bg.png) no-repeat;
+			height:872px;
+			width:460px;
+
+			.profile{
+				img{
+					border: 5px solid #c42424;
+				}
+			}
+
+		}
+
+
+	}
+}
+
+
+
+
+
+/*-----  End of Main page style  ------*/
+
+ 

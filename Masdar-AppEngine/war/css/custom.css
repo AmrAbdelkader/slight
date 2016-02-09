@@ -1,0 +1,308 @@
+@font-face {
+  font-family: "KabaleMedium Normal";
+  src: url("../fonts/KabaleMedium-Normal.eot?") format("eot"), url("../fonts/KabaleMedium-Normal.woff") format("woff"), url("../fonts/KabaleMedium-Normal.ttf") format("truetype"), url("../fonts/KabaleMedium-Normal.svg#KabaleMediumNormal") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+.my-container {
+  max-width: 1080px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  font-family: "KabaleMedium Normal";
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "KabaleMedium Normal";
+}
+/*=================================
+=            Main page            =
+=================================*/
+.mainpage .top_head {
+  background: url('../images/head_bg.png') repeat-x;
+  height: 130px;
+  padding-top: 25px;
+}
+.mainpage .top_head .left a {
+  color: #eeeeee;
+  font-size: 30px;
+  padding-top: 10px;
+  display: block;
+}
+.mainpage .top_head .left a img {
+  padding-right: 20px;
+}
+.mainpage .top_head .right {
+  text-align: right;
+}
+.mainpage .top_head .right a {
+  padding-right: 25px;
+}
+.mainpage .menu {
+  background: url(../images/menubg.png) repeat-x;
+  height: 159px;
+}
+.mainpage .menu ul {
+  margin: 0;
+  padding: 0;
+}
+.mainpage .menu ul li {
+  display: inline-block;
+  width: 24.7%;
+  text-align: center;
+  background: url(../images/menu_border.png) no-repeat top right;
+}
+.mainpage .menu ul li:last-child {
+  background: none;
+}
+.mainpage .menu ul li a {
+  display: block;
+  padding: 23px 0 25px 0px;
+}
+.mainpage .menu ul li .idea:hover {
+  border-bottom: 7px solid #a64096;
+}
+.mainpage .menu ul li .design:hover {
+  border-bottom: 7px solid #e74c3c;
+}
+.mainpage .menu ul li .social:hover {
+  border-bottom: 7px solid #3498db;
+}
+.mainpage .menu ul li .animation:hover {
+  border-bottom: 7px solid #f1c40f;
+}
+.mainpage .maincontent {
+  background: url(../images/bg.jpg) repeat-y;
+  padding-top: 25px;
+  padding-left: 30px;
+  padding-right: 30px;
+  overflow: hidden;
+  float: left;
+}
+.mainpage .maincontent .item {
+  position: relative;
+  float: left;
+  margin-bottom: 40px;
+  max-width: 430px;
+  height: 815px;
+}
+.mainpage .maincontent .item .profile {
+  background: url(../images/profilebg.png) repeat-x;
+  height: 115px;
+  width: 387px;
+  position: absolute;
+  z-index: 2;
+  bottom: 63px;
+  left: 22px;
+  padding-top: 22px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.mainpage .maincontent .item .profile img {
+  width: 68px;
+  height: 68px;
+  border: 5px solid #a64096;
+  float: left;
+  margin-left: 17px;
+}
+.mainpage .maincontent .item .profile h1 {
+  font-family: "KabaleMedium Normal";
+  font-size: 35px;
+  color: #fff;
+  font-weight: normal;
+  padding-top: 0;
+  padding-left: 15px;
+  float: left;
+}
+.mainpage .maincontent .item .profile span {
+  font-size: 50px;
+  font-family: "KabaleMedium Normal";
+  color: #fff;
+  float: right;
+  display: block;
+  margin-right: 30px;
+  margin-top: 15px;
+}
+.mainpage .maincontent .item .bgimg {
+  height: 684px;
+  width: 387px;
+  left: 22px;
+  border-radius: 2px;
+  top: 68px;
+  position: absolute;
+  z-index: 1;
+}
+.mainpage .maincontent .ideaitem {
+  background: url(../images/idea_bg.png) no-repeat;
+  margin-right: 60px;
+}
+.mainpage .maincontent .animationitem {
+  background: url(../images/animation_bg.png) no-repeat;
+}
+.mainpage .maincontent .animationitem .profile img {
+  border: 5px solid #f1c40f;
+}
+.mainpage .maincontent .socialitem {
+  background: url(../images/social_bg.png) no-repeat;
+  margin-right: 60px;
+}
+.mainpage .maincontent .socialitem .profile img {
+  border: 5px solid #3498db;
+}
+.mainpage .maincontent .designitem {
+  background: url(../images/design_bg.png) no-repeat;
+}
+.mainpage .maincontent .designitem .profile img {
+  border: 5px solid #e74c3c;
+}
+/*-----  End of Main page  ------*/
+/*=======================================
+=            Profile page style            =
+=======================================*/
+.profilepage .maincontent {
+  padding-left: 0;
+  padding-right: 0;
+  position: relative;
+  z-index: 0;
+}
+.profilepage .profile {
+  position: relative;
+  z-index: 10;
+  -webkit-filter: blur(0px);
+}
+.profilepage .profile ul {
+  padding: 0;
+  margin: 0;
+}
+.profilepage .profile .top_profile {
+  background: url('../images/profile/profile_pic.jpg') no-repeat;
+  height: 605px;
+  width: 855px;
+  position: relative;
+}
+.profilepage .profile .top_profile h1 {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  text-indent: 40px;
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  font-size: 60px;
+  margin-bottom: 0;
+  padding-top: 10px;
+  height: 80px;
+  color: #fff;
+  letter-spacing: 3px;
+}
+.profilepage .profile .buttons ul li {
+  list-style: none;
+  float: left;
+  height: 203px;
+  max-width: 211px;
+  width: 210px;
+}
+.profilepage .profile .buttons ul li a {
+  display: block;
+  padding-top: 123px;
+  color: #fff;
+  text-align: center;
+  font-size: 44px;
+}
+.profilepage .profile .buttons ul .idea2 {
+  background: url('../images/profile/idea.png') no-repeat;
+  transition: all 0.2s ease-in-out;
+}
+.profilepage .profile .buttons ul .idea2:hover {
+  background: url('../images/profile/idea2.png') no-repeat;
+}
+.profilepage .profile .buttons ul .design2 {
+  background: url('../images/profile/design.png') no-repeat;
+  transition: all 0.2s ease-in-out;
+}
+.profilepage .profile .buttons ul .design2:hover {
+  background: url('../images/profile/design2.png') no-repeat;
+}
+.profilepage .profile .buttons ul .social2 {
+  background: url('../images/profile/social.png') no-repeat;
+  transition: all 0.2s ease-in-out;
+}
+.profilepage .profile .buttons ul .social2:hover {
+  background: url('../images/profile/social2.png') no-repeat;
+}
+.profilepage .profile .buttons ul .animation2 {
+  background: url('../images/profile/animation.png') no-repeat;
+  transition: all 0.2s ease-in-out;
+}
+.profilepage .profile .buttons ul .animation2:hover {
+  background: url('../images/profile/animation2.png') no-repeat;
+}
+.profilepage .profile .followers ul {
+  background: #ffffff;
+  width: 840px;
+}
+.profilepage .profile .followers ul li {
+  display: inline-block;
+  height: 97px;
+  padding-top: 10px;
+  width: 49%;
+  font-size: 21px;
+  padding-left: 50px;
+  border-right: 1px solid #797979;
+}
+.profilepage .profile .followers ul li:last-child {
+  border: none;
+}
+.profilepage .profile .followers ul li span {
+  font-size: 61px;
+  font-weight: bold;
+  padding-right: 10px;
+}
+.profilepage .profile .followers ul li a {
+  color: #000000;
+  -webkit-transition: all 0.25s ease-in;
+}
+.profilepage .profile .followers ul li a:hover,
+.profilepage .profile .followers ul li a:focus {
+  color: #3498db;
+}
+.profilepage .profile .profile_menu ul {
+  width: 840px;
+  padding-left: 30px;
+  background: rgba(0, 0, 0, 0.7);
+  height: 800px;
+}
+.profilepage .profile .profile_menu ul li {
+  list-style: none;
+  height: 100px;
+  padding-top: 30px;
+  border-bottom: 1px solid #444444;
+  background: url('../images/profile/profilemenu.png') no-repeat;
+}
+.profilepage .profile .profile_menu ul li:nth-child(1) {
+  background-position: 40px 40px;
+}
+.profilepage .profile .profile_menu ul li:nth-child(2) {
+  background-position: 40px -50px;
+}
+.profilepage .profile .profile_menu ul li:last-child {
+  border-bottom: none;
+  background-position: 40px -139px;
+}
+.profilepage .profile .profile_menu ul li a {
+  color: #ffffff;
+  font-size: 48px;
+  display: block;
+  padding-left: 120px;
+  -webkit-transition: all 0.25s ease-in;
+}
+.profilepage .profile .profile_menu ul li a:hover,
+.profilepage .profile .profile_menu ul li a:focus {
+  color: #3498db;
+}
+/*-----  End of Profile page style  ------*/

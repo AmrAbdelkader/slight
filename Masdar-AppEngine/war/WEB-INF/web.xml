@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><web-app xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.5" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+  
+ <servlet>
+  <servlet-name>SystemServiceServlet</servlet-name>
+  <servlet-class>com.google.api.server.spi.SystemServiceServlet</servlet-class>
+  <init-param>
+   <param-name>services</param-name>
+   <param-value>com.masdar.DeviceInfoEndpoint,com.masdar.MessageEndpoint,com.masdar.entities.CommentEndpoint,com.masdar.entities.FollowersEndpoint,com.masdar.entities.IdeaEndpoint,com.masdar.entities.SocialIdeaUserEndpoint,com.masdar.entities.TestEntityEndpoint,com.masdar.entities.UserEndpoint,com.masdar.entities.VotingUserEndpoint</param-value>
+  </init-param>
+ </servlet>
+ <servlet-mapping>
+  <servlet-name>SystemServiceServlet</servlet-name>
+  <url-pattern>/_ah/spi/*</url-pattern>
+ </servlet-mapping>
+ 
+ <servlet>
+  <servlet-name>DataHandler</servlet-name>
+  <servlet-class>com.masdar.controllers.DataHandler</servlet-class>
+ </servlet>
+ <servlet-mapping>
+  <servlet-name>DataHandler</servlet-name>
+  <url-pattern>/DataHandler</url-pattern>
+ </servlet-mapping>
+ 
+ <servlet>
+  <servlet-name>BlobUrlGenerator</servlet-name>
+  <servlet-class>com.masdar.blob.BlobUrlGenerator</servlet-class>
+ </servlet>
+ <servlet-mapping>
+  <servlet-name>BlobUrlGenerator</servlet-name>
+  <url-pattern>/BlobUrlGenerator</url-pattern>
+ </servlet-mapping>
+ 
+ <servlet>
+  <servlet-name>UploadHandler</servlet-name>
+  <servlet-class>com.masdar.blob.UploadHandler</servlet-class>
+ </servlet>
+ <servlet-mapping>
+  <servlet-name>UploadHandler</servlet-name>
+  <url-pattern>/UploadHandler</url-pattern>
+ </servlet-mapping>
+ 
+ <servlet>
+  <servlet-name>IdeaController</servlet-name>
+  <servlet-class>com.masdar.controllers.IdeaController</servlet-class>
+ </servlet>
+ <servlet-mapping>
+  <servlet-name>IdeaController</servlet-name>
+  <url-pattern>/IdeaController</url-pattern>
+ </servlet-mapping>
+ 
+ <servlet>
+  <servlet-name>BlobServe</servlet-name>
+  <servlet-class>com.masdar.blob.BlobServe</servlet-class>
+ </servlet>
+ <servlet-mapping>
+  <servlet-name>BlobServe</servlet-name>
+  <url-pattern>/BlobServe</url-pattern>
+ </servlet-mapping>
+ 
+</web-app>

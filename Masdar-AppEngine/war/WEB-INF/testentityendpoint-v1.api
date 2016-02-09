@@ -1,0 +1,223 @@
+{
+  "extends" : "thirdParty.api",
+  "abstract" : false,
+  "root" : "https://masdarengine.appspot.com/_ah/api",
+  "name" : "testentityendpoint",
+  "version" : "v1",
+  "defaultVersion" : false,
+  "adapter" : {
+    "bns" : "https://masdarengine.appspot.com/_ah/spi",
+    "deadline" : 10.0,
+    "type" : "lily"
+  },
+  "auth" : {
+    "allowCookieAuth" : false
+  },
+  "frontendLimits" : {
+    "unregisteredUserQps" : -1,
+    "unregisteredQps" : -1,
+    "unregisteredDaily" : -1,
+    "rules" : [ ]
+  },
+  "cacheControl" : {
+    "type" : "no-cache",
+    "maxAge" : 0
+  },
+  "ownerDomain" : "masdar.com",
+  "ownerName" : "masdar.com",
+  "packagePath" : "entities",
+  "methods" : {
+    "testentityendpoint.removeTestEntity" : {
+      "path" : "testentity/{id}",
+      "httpMethod" : "DELETE",
+      "scopes" : [ ],
+      "audiences" : [ ],
+      "clientIds" : [ ],
+      "rosyMethod" : "com.masdar.entities.TestEntityEndpoint.removeTestEntity",
+      "request" : {
+        "parameters" : {
+          "id" : {
+            "type" : "int64",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "empty"
+      }
+    },
+    "testentityendpoint.listTestEntity" : {
+      "path" : "testentity",
+      "httpMethod" : "GET",
+      "scopes" : [ ],
+      "audiences" : [ ],
+      "clientIds" : [ ],
+      "rosyMethod" : "com.masdar.entities.TestEntityEndpoint.listTestEntity",
+      "request" : {
+        "parameters" : {
+          "cursor" : {
+            "type" : "string",
+            "required" : false
+          },
+          "limit" : {
+            "type" : "int32",
+            "required" : false
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "testentityendpoint.updateTestEntity" : {
+      "path" : "testentity",
+      "httpMethod" : "PUT",
+      "scopes" : [ ],
+      "audiences" : [ ],
+      "clientIds" : [ ],
+      "rosyMethod" : "com.masdar.entities.TestEntityEndpoint.updateTestEntity",
+      "request" : {
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "testentityendpoint.insertTestEntity" : {
+      "path" : "testentity",
+      "httpMethod" : "POST",
+      "scopes" : [ ],
+      "audiences" : [ ],
+      "clientIds" : [ ],
+      "rosyMethod" : "com.masdar.entities.TestEntityEndpoint.insertTestEntity",
+      "request" : {
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "testentityendpoint.getTestEntity" : {
+      "path" : "testentity/{id}",
+      "httpMethod" : "GET",
+      "scopes" : [ ],
+      "audiences" : [ ],
+      "clientIds" : [ ],
+      "rosyMethod" : "com.masdar.entities.TestEntityEndpoint.getTestEntity",
+      "request" : {
+        "parameters" : {
+          "id" : {
+            "type" : "int64",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    }
+  },
+  "descriptor" : {
+    "schemas" : {
+      "CollectionResponse_TestEntity" : {
+        "id" : "CollectionResponse_TestEntity",
+        "type" : "object",
+        "properties" : {
+          "items" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "TestEntity"
+            }
+          },
+          "nextPageToken" : {
+            "type" : "string"
+          }
+        }
+      },
+      "TestEntity" : {
+        "id" : "TestEntity",
+        "type" : "object",
+        "properties" : {
+          "entity_id" : {
+            "type" : "string",
+            "format" : "int64"
+          },
+          "user_object" : {
+            "$ref" : "User"
+          }
+        }
+      },
+      "User" : {
+        "id" : "User",
+        "type" : "object",
+        "properties" : {
+          "user_id" : {
+            "type" : "string",
+            "format" : "int64"
+          },
+          "email" : {
+            "type" : "string"
+          },
+          "device_id" : {
+            "type" : "string"
+          },
+          "user_name" : {
+            "type" : "string"
+          },
+          "fb_id" : {
+            "type" : "string",
+            "format" : "int64"
+          },
+          "gplus_id" : {
+            "type" : "string",
+            "format" : "int64"
+          },
+          "mob_no" : {
+            "type" : "string"
+          },
+          "join_date" : {
+            "type" : "string"
+          },
+          "profile_pic" : {
+            "type" : "string"
+          }
+        }
+      }
+    },
+    "methods" : {
+      "com.masdar.entities.TestEntityEndpoint.removeTestEntity" : {
+      },
+      "com.masdar.entities.TestEntityEndpoint.listTestEntity" : {
+        "response" : {
+          "$ref" : "CollectionResponse_TestEntity"
+        }
+      },
+      "com.masdar.entities.TestEntityEndpoint.updateTestEntity" : {
+        "request" : {
+          "$ref" : "TestEntity"
+        },
+        "response" : {
+          "$ref" : "TestEntity"
+        }
+      },
+      "com.masdar.entities.TestEntityEndpoint.insertTestEntity" : {
+        "request" : {
+          "$ref" : "TestEntity"
+        },
+        "response" : {
+          "$ref" : "TestEntity"
+        }
+      },
+      "com.masdar.entities.TestEntityEndpoint.getTestEntity" : {
+        "response" : {
+          "$ref" : "TestEntity"
+        }
+      }
+    }
+  }
+}

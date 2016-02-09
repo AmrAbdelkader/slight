@@ -1,0 +1,252 @@
+{
+  "extends" : "thirdParty.api",
+  "abstract" : false,
+  "root" : "https://masdarengine.appspot.com/_ah/api",
+  "name" : "socialideauserendpoint",
+  "version" : "v1",
+  "defaultVersion" : false,
+  "adapter" : {
+    "bns" : "https://masdarengine.appspot.com/_ah/spi",
+    "deadline" : 10.0,
+    "type" : "lily"
+  },
+  "auth" : {
+    "allowCookieAuth" : false
+  },
+  "frontendLimits" : {
+    "unregisteredUserQps" : -1,
+    "unregisteredQps" : -1,
+    "unregisteredDaily" : -1,
+    "rules" : [ ]
+  },
+  "cacheControl" : {
+    "type" : "no-cache",
+    "maxAge" : 0
+  },
+  "ownerDomain" : "masdar.com",
+  "ownerName" : "masdar.com",
+  "packagePath" : "entities",
+  "methods" : {
+    "socialideauserendpoint.insertSocialIdeaUser" : {
+      "path" : "socialideauser",
+      "httpMethod" : "POST",
+      "scopes" : [ ],
+      "audiences" : [ ],
+      "clientIds" : [ ],
+      "rosyMethod" : "com.masdar.entities.SocialIdeaUserEndpoint.insertSocialIdeaUser",
+      "request" : {
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "socialideauserendpoint.updateSocialIdeaUser" : {
+      "path" : "socialideauser",
+      "httpMethod" : "PUT",
+      "scopes" : [ ],
+      "audiences" : [ ],
+      "clientIds" : [ ],
+      "rosyMethod" : "com.masdar.entities.SocialIdeaUserEndpoint.updateSocialIdeaUser",
+      "request" : {
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "socialideauserendpoint.listSocialIdeaUser" : {
+      "path" : "socialideauser",
+      "httpMethod" : "GET",
+      "scopes" : [ ],
+      "audiences" : [ ],
+      "clientIds" : [ ],
+      "rosyMethod" : "com.masdar.entities.SocialIdeaUserEndpoint.listSocialIdeaUser",
+      "request" : {
+        "parameters" : {
+          "cursor" : {
+            "type" : "string",
+            "required" : false
+          },
+          "limit" : {
+            "type" : "int32",
+            "required" : false
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "socialideauserendpoint.removeSocialIdeaUser" : {
+      "path" : "socialideauser/{id}",
+      "httpMethod" : "DELETE",
+      "scopes" : [ ],
+      "audiences" : [ ],
+      "clientIds" : [ ],
+      "rosyMethod" : "com.masdar.entities.SocialIdeaUserEndpoint.removeSocialIdeaUser",
+      "request" : {
+        "parameters" : {
+          "id" : {
+            "type" : "int64",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "empty"
+      }
+    },
+    "socialideauserendpoint.getSocialIdeaUser" : {
+      "path" : "socialideauser/{id}",
+      "httpMethod" : "GET",
+      "scopes" : [ ],
+      "audiences" : [ ],
+      "clientIds" : [ ],
+      "rosyMethod" : "com.masdar.entities.SocialIdeaUserEndpoint.getSocialIdeaUser",
+      "request" : {
+        "parameters" : {
+          "id" : {
+            "type" : "int64",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "socialideauserendpoint.getUserRole" : {
+      "path" : "socialideauser/{ideaId}/{userId}",
+      "httpMethod" : "GET",
+      "scopes" : [ ],
+      "audiences" : [ ],
+      "clientIds" : [ ],
+      "rosyMethod" : "com.masdar.entities.SocialIdeaUserEndpoint.getUserRole",
+      "request" : {
+        "parameters" : {
+          "ideaId" : {
+            "type" : "int64",
+            "required" : true
+          },
+          "userId" : {
+            "type" : "int64",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "socialideauserendpoint.getIdeaStatus" : {
+      "path" : "getIdeaStatus",
+      "httpMethod" : "GET",
+      "scopes" : [ ],
+      "audiences" : [ ],
+      "clientIds" : [ ],
+      "rosyMethod" : "com.masdar.entities.SocialIdeaUserEndpoint.getIdeaStatus",
+      "request" : {
+        "parameters" : {
+          "ideaId" : {
+            "type" : "int64",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    }
+  },
+  "descriptor" : {
+    "schemas" : {
+      "SocialIdeaUser" : {
+        "id" : "SocialIdeaUser",
+        "type" : "object",
+        "properties" : {
+          "social_idea_user_id" : {
+            "type" : "string",
+            "format" : "int64"
+          },
+          "idea_id" : {
+            "type" : "string",
+            "format" : "int64"
+          },
+          "user_id" : {
+            "type" : "string",
+            "format" : "int64"
+          },
+          "role_id" : {
+            "type" : "integer"
+          },
+          "isLocked" : {
+            "type" : "integer"
+          }
+        }
+      },
+      "CollectionResponse_SocialIdeaUser" : {
+        "id" : "CollectionResponse_SocialIdeaUser",
+        "type" : "object",
+        "properties" : {
+          "items" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "SocialIdeaUser"
+            }
+          },
+          "nextPageToken" : {
+            "type" : "string"
+          }
+        }
+      }
+    },
+    "methods" : {
+      "com.masdar.entities.SocialIdeaUserEndpoint.insertSocialIdeaUser" : {
+        "request" : {
+          "$ref" : "SocialIdeaUser"
+        },
+        "response" : {
+          "$ref" : "SocialIdeaUser"
+        }
+      },
+      "com.masdar.entities.SocialIdeaUserEndpoint.updateSocialIdeaUser" : {
+        "request" : {
+          "$ref" : "SocialIdeaUser"
+        },
+        "response" : {
+          "$ref" : "SocialIdeaUser"
+        }
+      },
+      "com.masdar.entities.SocialIdeaUserEndpoint.listSocialIdeaUser" : {
+        "response" : {
+          "$ref" : "CollectionResponse_SocialIdeaUser"
+        }
+      },
+      "com.masdar.entities.SocialIdeaUserEndpoint.removeSocialIdeaUser" : {
+      },
+      "com.masdar.entities.SocialIdeaUserEndpoint.getSocialIdeaUser" : {
+        "response" : {
+          "$ref" : "SocialIdeaUser"
+        }
+      },
+      "com.masdar.entities.SocialIdeaUserEndpoint.getUserRole" : {
+        "response" : {
+          "$ref" : "SocialIdeaUser"
+        }
+      },
+      "com.masdar.entities.SocialIdeaUserEndpoint.getIdeaStatus" : {
+        "response" : {
+          "$ref" : "SocialIdeaUser"
+        }
+      }
+    }
+  }
+}

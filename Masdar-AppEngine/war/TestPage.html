@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Main page</title>
+		<link type="test-css/text" href="css/style.css" rel="stylesheet" media="screen and (-webkit-device-pixel-ratio:3)">
+		<link type="test-css/text" href="css/custom.css" rel="stylesheet" media="screen and (-webkit-device-pixel-ratio:3)">
+		<link href="test-css/jquery.mobile-1.4.0.css" rel="stylesheet" >
+		
+		
+		<script src="js/jquery/jquery.js"></script>
+		<script src="js/jquery/jquery-mobile.js"></script>
+		<script src="js/jquery/jquery.isotope.js"></script>
+		<script src="js/masdar-script.js"></script>
+		<script src="js/idea/idea-model.js"></script>
+		<script src="js/idea/idea-view.js"></script>
+		<script src="js/user/user-model.js"></script>
+		<script src="js/user/user-view.js"></script>
+
+
+		<script type="text/javascript">
+
+		$(document).ready(function(){
+				$('.maincontent').isotope({
+				  itemSelector : '.item',
+
+				   animationOptions: {
+				     duration: 1000,
+				     easing: 'linear',
+				     queue: false
+				   },
+				   masonry: {
+			    columnWidth: 50
+			  }
+			
+
+				});
+
+			$('#filters a').click(function(){
+			  var selector = $(this).attr('data-filter');
+			 $('.maincontent').isotope({ filter: selector });
+			  return false;
+			});
+		});
+		</script>
+		
+	</head>
+	<body>
+		
+		<div class="my-container mainpage">
+		 
+
+			<div class="row">
+			<div class="col-md-12 col-sm-12 col-xs-12 toplvl" data-role="header" data-position="fixed">
+				<div class="row">
+				<div class="col-md-12 top_head">
+				<div class="row">
+					<div class="col-md-6  col-sm-6 col-xs-6 left">
+						<div class="row">
+							<a id="ileftmenu2" href="#ileftmenu"><img src="images/appico.png" alt="">Application</a>
+						</div>
+					</div>
+
+					<div class="col-md-6 col-sm-6 col-xs-6 right">
+						<div class="row">
+					
+					<a id="addnewitem" href="#addnewpage" data-rel="popup"  data-transition="pop"><img  src="images/edit_ico.png" alt=""></a>
+
+							
+						</div>
+					</div>
+
+
+				</div>
+				</div><!-- ends of top head -->
+
+					<div class="col-md-12 col-sm-12 col-xs-12 menu" id="filters">
+				<div class="row">
+					<ul>
+							<li><a class="idea" href="#" data-filter=".ideaitem">
+								<img src="images/idea.png" alt=""></a>
+							</li>
+							
+							<li><a class="design" href="#" data-filter=".designitem">
+								<img src="images/design.png" alt=""></a>
+							</li>
+							<li><a class="social" href="#" data-filter=".socialitem">
+								<img src="images/social.png" alt=""></a>
+							</li>
+							<li><a class="animation" href="#" data-filter=".animationitem">
+								<img src="images/animation.png" alt=""></a>
+							</li>
+					</ul>
+
+				</div>
+					
+				</div><!-- ends of menu -->
+
+				</div>
+				</div><!-- ends of top lvl -->
+
+				<div class="col-md-12 col-sm-12 col-xs-12 maincontent" id="ideasContentDiv">
+					
+				</div><!-- ends of content items -->
+			</div>
+
+		<!-- start of add new page -->
+				
+
+			<div class="row addnew"   data-role="popup" id="addnewpage">
+					<div class="col-md-6 col-sm-6 cl-xs-6 item ideaitem">
+
+						<div class="ibg">
+							<a href="#"><img src="images/addnew/idea.png" alt=""></a>
+						</div>
+						
+					</div><!-- ends of idea item -->
+
+					<div class="col-md-6 col-sm-6 cl-xs-6 item designitem">
+						
+						<div class="ibg">
+							<a href="#"><img src="images/addnew/design.png" alt=""></a>
+						</div>
+						
+					</div><!-- ends of idea designitem -->
+
+					<div class="col-md-6 col-sm-6 cl-xs-6 item socialitem">
+
+						<div class="ibg">
+							<a href="#"><img src="images/addnew/social.png" alt=""></a>
+						</div>
+						
+					</div><!-- ends of idea socialitem -->
+
+
+					<div class="col-md-6 col-sm-6 cl-xs-6 item animationitem">
+
+						<div class="ibg">
+							<a href="#"><img src="images/addnew/animation.png" alt=""></a>
+						</div>
+
+					</div><!-- ends of idea animation -->
+			</div><!-- ends of addnew -->
+
+		<!-- ends of add new page -->
+
+
+
+		<!-- start of idea page -->
+
+			<div class="row idea">
+			
+
+					<div class="col-md-12 col-sm-12 col-xs-12 design_item" data-role="popup" id="idesignitem2" >
+						<a href="#">x</a>
+						<img src="images/idea/img.jpg" alt="">
+						<div class="col-md-12 col-sm-12 col-xs-12 iprofile">
+							<div class="col-md-8 col-sm-8 left-side">
+								<div class="row">
+									<a href="#">
+									<img class="pull-left" src="images/idea/avatar.jpg" alt="">
+									<h1>John Smith</h1>
+									</a>
+									<span>12 Jan 2014</span>
+
+									<a class="buttonfree" href="#">Free</a>
+									<a href="#"><p class="comment clearfix"><span>58</span>Comment</p></a>
+										
+								</div>
+							</div><!-- ends of left-side -->
+
+							<div class="col-md-3 col-lg-3 right-side">
+								<div class="row">
+									<a href="#"><img src="images/idea/up.png" alt=""></a>
+									<span>55</span>
+									<a href="#"><img src="images/idea/down.png" alt=""></a>
+								</div>
+							</div><!-- ends of right-side -->
+						</div>
+					</div><!-- ends of idea item -->
+
+
+				<div class="col-md-12 col-sm-12 col-xs-12 design_item idea_item" style="display:none">
+						<a href="#">x</a>
+						<img src="images/idea/img.jpg" alt="">
+						<div class="col-md-12 col-sm-12 col-xs-12 iprofile">
+							<div class="col-md-9 col-sm-9 left-side">
+								<div class="row">
+									<a href="#">
+									<img class="pull-left" src="images/idea/avatar.jpg" alt="">
+									<h1>John Smith</h1>
+									</a>
+									<span>12 Jan 2014</span>
+
+									<a class="buttonfree" href="#">Free</a>
+								<a href="#"><p class="comment clearfix"><span>58</span>Comment</p></a>
+										
+								</div>
+							</div><!-- ends of left-side -->
+
+							<div class="col-md-3 col-lg-3 right-side">
+								<div class="row">
+									<a href="#"><img src="images/idea/up.png" alt=""></a>
+									<span>55</span>
+									<a href="#"><img src="images/idea/down.png" alt=""></a>
+								</div>
+							</div><!-- ends of right-side -->
+						</div>
+					</div><!-- ends of idea  item -->
+
+
+				<div class="col-md-12 col-sm-12 col-xs-12 design_item social_item" style="display:none">
+						<a href="#">x</a>
+						<img src="images/idea/img.jpg" alt="">
+						<div class="col-md-12 col-sm-12 col-xs-12 iprofile">
+							<div class="col-md-9 col-sm-9 left-side">
+								<div class="row">
+									<a href="#">
+									<img class="pull-left" src="images/idea/avatar.jpg" alt="">
+									<h1>John Smith</h1>
+									</a>
+									<span>12 Jan 2014</span>
+
+									<a class="buttonfree" href="#">Free</a>
+								<a href="#"><p class="comment clearfix"><span>58</span>Comment</p></a>
+										
+								</div>
+							</div><!-- ends of left-side -->
+
+							<div class="col-md-3 col-lg-3 right-side">
+								<div class="row">
+									<a href="#"><img src="images/idea/up.png" alt=""></a>
+									<span>55</span>
+									<a href="#"><img src="images/idea/down.png" alt=""></a>
+								</div>
+							</div><!-- ends of right-side -->
+						</div>
+					</div><!-- ends of social  item -->
+
+					
+			<div class="col-md-12 col-sm-12 col-xs-12 design_item animation_item" style="display:none;" >
+						<a href="#">x</a>
+						<img src="images/idea/img.jpg" alt="">
+						<div class="col-md-12 col-sm-12 col-xs-12 iprofile">
+							<div class="col-md-9 col-sm-9 left-side">
+								<div class="row">
+									<a href="#">
+									<img class="pull-left" src="images/idea/avatar.jpg" alt="">
+									<h1>John Smith</h1>
+									</a>
+									<span>12 Jan 2014</span>
+
+									<a class="buttonfree" href="#">Free</a>
+								<a href="#"><p class="comment clearfix"><span>58</span>Comment</p></a>
+										
+								</div>
+							</div><!-- ends of left-side -->
+
+							<div class="col-md-3 col-lg-3 right-side">
+								<div class="row">
+									<a href="#"><img src="images/idea/up.png" alt=""></a>
+									<span>55</span>
+									<a href="#"><img src="images/idea/down.png" alt=""></a>
+								</div>
+							</div><!-- ends of right-side -->
+						</div>
+				</div><!-- ends of animation  item -->
+
+			</div><!-- ends of idea page -->
+
+
+
+
+			<!-- start of profile page content -->
+
+			<div data-role="panel" id="ileftmenu" data-theme="none" data-position="left" data-display="overlay" data-swipe-close="true" >
+
+        <div class="ui-panel-inner">
+
+        <div class="row profilepage">
+
+				<div class="col-md-12 col-sm-12 col-xs-12 iprofilemaincontent">
+					<div class="row">
+						<div class="col-md-11 col-sm-11 col-xs-11 profile">
+						<div class="row">
+							<div class="top_profile col-md-12 col-sm-12 col-x-12">
+								<div class="row">
+									<a href="#"><h1>John Smith</h1></a>
+								</div>
+
+							</div><!-- ends of top profile -->
+
+							<!-- <div class="buttons col-md-12 col-sm-12 col-xs-12">
+									<ul>
+										<li class="idea2"><a href="#">1733</a></li>
+										<li class="design2"><a href="#">33</a></li>
+										<li class="social2"><a href="#">33</a></li>
+										<li class="animation2"><a href="#">33</a></li>
+									</ul>
+								
+									
+							</div> --><!-- ends of buttons -->
+								<div class="col-12-md col-sm-12 col-xs-12 followers">
+									<ul>
+										<li>
+											<a href="#"><span>588</span>Followers</a>
+										</li>
+										<li><a href="#"><span>223</span>Following</a></li>
+									</ul>
+								
+
+								</div><!-- ends of followers -->
+
+								<div class="col-12-md col-sm-12 col-xs-12 profile_menu">
+									<ul>
+										<li><a href="#">Profile</a></li>
+										<li><a href="#">My Votes</a></li>
+										<li><a href="#">Log Out</a></li>
+									</ul>
+								</div><!-- profile menu -->
+						</div>
+							
+						</div><!-- ends of profile -->
+
+
+					</div>
+
+				</div><!-- ends of content items -->
+				
+			</div>
+
+        </div>
+
+		</div><!-- ends profilepage  -->
+
+
+
+
+
+		</div> <!-- ends of main container -->
+
+<script>
+			$(document).ready(function(){
+			$('#addnewpage').removeClass('ui-body-inherit');
+			$('#addnewpage').removeClass('ui-overlay-shadow');
+			$('#idesignitem2-popup').addClass('idea');
+			$('#idesignitem2').removeClass('ui-overlay-shadow');
+			$('#idesignitem2').removeClass('ui-body-inherit');
+			$('#ileftmenu').removeClass('ui-body-inherit');
+			$('.toplvl').removeClass('ui-bar-inherit');
+
+			$('#ileftmenu2').click(function(){
+				
+			});
+			
+			$('#idesignitem').click(function(d){
+			//$('#aybate5a').trigger("click");
+			
+			})
+
+			});
+			
+
+		</script>
+
+	</body>
+</html>

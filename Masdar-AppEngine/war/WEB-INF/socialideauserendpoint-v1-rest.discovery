@@ -1,0 +1,216 @@
+{
+ "kind": "discovery#restDescription",
+ "etag": "\"ykhqEJ_LDFBNzs2RnXtIc2-QyAc/bDuYPTwGw_fC17sCqLoMuTsbWic\"",
+ "discoveryVersion": "v1",
+ "id": "socialideauserendpoint:v1",
+ "name": "socialideauserendpoint",
+ "version": "v1",
+ "description": "This is an API",
+ "ownerDomain": "masdar.com",
+ "ownerName": "masdar.com",
+ "packagePath": "entities",
+ "icons": {
+  "x16": "http://www.google.com/images/icons/product/search-16.gif",
+  "x32": "http://www.google.com/images/icons/product/search-32.gif"
+ },
+ "protocol": "rest",
+ "baseUrl": "https://masdarengine.appspot.com/_ah/api/socialideauserendpoint/v1/",
+ "basePath": "/_ah/api/socialideauserendpoint/v1/",
+ "rootUrl": "https://masdarengine.appspot.com/_ah/api/",
+ "servicePath": "socialideauserendpoint/v1/",
+ "batchPath": "batch",
+ "parameters": {
+  "alt": {
+   "type": "string",
+   "description": "Data format for the response.",
+   "default": "json",
+   "enum": [
+    "json"
+   ],
+   "enumDescriptions": [
+    "Responses with Content-Type of application/json"
+   ],
+   "location": "query"
+  },
+  "fields": {
+   "type": "string",
+   "description": "Selector specifying which fields to include in a partial response.",
+   "location": "query"
+  },
+  "key": {
+   "type": "string",
+   "description": "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.",
+   "location": "query"
+  },
+  "oauth_token": {
+   "type": "string",
+   "description": "OAuth 2.0 token for the current user.",
+   "location": "query"
+  },
+  "prettyPrint": {
+   "type": "boolean",
+   "description": "Returns response with indentations and line breaks.",
+   "default": "true",
+   "location": "query"
+  },
+  "quotaUser": {
+   "type": "string",
+   "description": "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.",
+   "location": "query"
+  },
+  "userIp": {
+   "type": "string",
+   "description": "IP address of the site where the request originates. Use this if you want to enforce per-user limits.",
+   "location": "query"
+  }
+ },
+ "schemas": {
+  "CollectionResponse_SocialIdeaUser": {
+   "id": "CollectionResponse_SocialIdeaUser",
+   "type": "object",
+   "properties": {
+    "items": {
+     "type": "array",
+     "items": {
+      "$ref": "SocialIdeaUser"
+     }
+    },
+    "nextPageToken": {
+     "type": "string"
+    }
+   }
+  },
+  "SocialIdeaUser": {
+   "id": "SocialIdeaUser",
+   "type": "object",
+   "properties": {
+    "idea_id": {
+     "type": "string",
+     "format": "int64"
+    },
+    "isLocked": {
+     "type": "integer",
+     "format": "int32"
+    },
+    "role_id": {
+     "type": "integer",
+     "format": "int32"
+    },
+    "social_idea_user_id": {
+     "type": "string",
+     "format": "int64"
+    },
+    "user_id": {
+     "type": "string",
+     "format": "int64"
+    }
+   }
+  }
+ },
+ "methods": {
+  "getSocialIdeaUser": {
+   "id": "socialideauserendpoint.getSocialIdeaUser",
+   "path": "socialideauser/{id}",
+   "httpMethod": "GET",
+   "parameters": {
+    "id": {
+     "type": "string",
+     "required": true,
+     "format": "int64",
+     "location": "path"
+    }
+   },
+   "parameterOrder": [
+    "id"
+   ],
+   "response": {
+    "$ref": "SocialIdeaUser"
+   }
+  },
+  "getUserRole": {
+   "id": "socialideauserendpoint.getUserRole",
+   "path": "socialideauser/{ideaId}/{userId}",
+   "httpMethod": "GET",
+   "parameters": {
+    "ideaId": {
+     "type": "string",
+     "required": true,
+     "format": "int64",
+     "location": "path"
+    },
+    "userId": {
+     "type": "string",
+     "required": true,
+     "format": "int64",
+     "location": "path"
+    }
+   },
+   "parameterOrder": [
+    "ideaId",
+    "userId"
+   ],
+   "response": {
+    "$ref": "SocialIdeaUser"
+   }
+  },
+  "insertSocialIdeaUser": {
+   "id": "socialideauserendpoint.insertSocialIdeaUser",
+   "path": "socialideauser",
+   "httpMethod": "POST",
+   "request": {
+    "$ref": "SocialIdeaUser",
+    "parameterName": "resource"
+   },
+   "response": {
+    "$ref": "SocialIdeaUser"
+   }
+  },
+  "listSocialIdeaUser": {
+   "id": "socialideauserendpoint.listSocialIdeaUser",
+   "path": "socialideauser",
+   "httpMethod": "GET",
+   "parameters": {
+    "cursor": {
+     "type": "string",
+     "location": "query"
+    },
+    "limit": {
+     "type": "integer",
+     "format": "int32",
+     "location": "query"
+    }
+   },
+   "response": {
+    "$ref": "CollectionResponse_SocialIdeaUser"
+   }
+  },
+  "removeSocialIdeaUser": {
+   "id": "socialideauserendpoint.removeSocialIdeaUser",
+   "path": "socialideauser/{id}",
+   "httpMethod": "DELETE",
+   "parameters": {
+    "id": {
+     "type": "string",
+     "required": true,
+     "format": "int64",
+     "location": "path"
+    }
+   },
+   "parameterOrder": [
+    "id"
+   ]
+  },
+  "updateSocialIdeaUser": {
+   "id": "socialideauserendpoint.updateSocialIdeaUser",
+   "path": "socialideauser",
+   "httpMethod": "PUT",
+   "request": {
+    "$ref": "SocialIdeaUser",
+    "parameterName": "resource"
+   },
+   "response": {
+    "$ref": "SocialIdeaUser"
+   }
+  }
+ }
+}

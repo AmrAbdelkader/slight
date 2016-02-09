@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<datastore-indexes autoGenerate="true">
+    
+    <datastore-index kind="User" ancestor="false">
+        <property name="user_name" direction="asc" />
+        <property name="fb_id" direction="asc" />        
+        <property name="device_id" direction="asc" />        
+    </datastore-index>
+    
+    <datastore-index kind="Idea" ancestor="false">
+        <property name="idea_blob_key" direction="asc" />
+        <property name="user_id" direction="asc" />
+        <property name="idea_type" direction="asc" />                
+    </datastore-index>
+    
+    <datastore-index kind="Followers" ancestor="false">
+        <property name="follower_user_id" direction="asc" />
+        <property name="following_user_id" direction="asc" />                
+    </datastore-index>
+    
+    <datastore-index kind="Comment" ancestor="false">
+        <property name="idea_id" direction="asc" />
+        <property name="user_id" direction="asc" />                
+    </datastore-index>
+    
+    <datastore-index kind="VotingUser" ancestor="false">
+        <property name="vote_user_id" direction="asc" />
+        <property name="vote_idea_id" direction="asc" />                
+    </datastore-index>
+    
+    <datastore-index kind="SocialIdeaUser" ancestor="false">
+        <property name="idea_id" direction="asc" />
+        <property name="user_id" direction="asc" />                
+    </datastore-index>
+    
+</datastore-indexes>

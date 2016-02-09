@@ -1,0 +1,96 @@
+# view AndroidManifest.xml #generated:71
+-keep class com.facebook.LoginActivity { <init>(...); }
+
+# view res/layout/com_facebook_usersettingsfragment.xml #generated:48
+# view res/layout/splash.xml #generated:14
+-keep class com.facebook.widget.LoginButton { <init>(...); }
+
+# view res/layout/selection.xml #generated:8
+-keep class com.facebook.widget.ProfilePictureView { <init>(...); }
+
+# view res/layout/activity_auth.xml #generated:18
+-keep class com.facebook.widget.UserSettingsFragment { <init>(...); }
+
+# view AndroidManifest.xml #generated:40
+-keep class com.google.android.gcm.GCMBroadcastReceiver { <init>(...); }
+
+# view AndroidManifest.xml #generated:60
+-keep class com.masdar.AuthActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:111
+-keep class com.masdar.DummyActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:38
+-keep class com.masdar.GCMIntentService { <init>(...); }
+
+# view AndroidManifest.xml #generated:32
+-keep class com.masdar.MainActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:55
+-keep class com.masdar.RegisterActivity { <init>(...); }
+
+# view res/layout/activity_auth.xml #generated:6
+-keep class com.masdar.SelectionFragment { <init>(...); }
+
+# view AndroidManifest.xml #generated:121
+-keep class com.masdar.SocialViewerActivity { <init>(...); }
+
+# view res/layout/activity_auth.xml #generated:12
+-keep class com.masdar.SplashFragment { <init>(...); }
+
+# view AndroidManifest.xml #generated:75
+-keep class com.masdar.StartActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:85
+-keep class com.masdar.drawing.DrawingActivity { <init>(...); }
+
+# view res/layout/activity_drawing.xml #generated:13
+-keep class com.masdar.drawing.DrawingFragment { <init>(...); }
+
+# view res/layout/activity_drawing.xml #generated:7
+-keep class com.masdar.drawing.IdeaTypeSelector { <init>(...); }
+
+# view AndroidManifest.xml #generated:116
+-keep class com.masdar.slook.AirButtonSimpleActivity { <init>(...); }
+
+# view res/layout/activity_slook_comment.xml #generated:13
+-keep class com.masdar.slook.LookCustomTextView { <init>(...); }
+
+# view AndroidManifest.xml #generated:107
+-keep class com.masdar.slook.SLookComment { <init>(...); }
+
+# view AndroidManifest.xml #generated:103
+-keep class com.masdar.spen.basiceditor.SPen_BasicEditor { <init>(...); }
+
+# view AndroidManifest.xml #generated:89
+-keep class com.masdar.spen.basicui.SPenBasicUI { <init>(...); }
+
+# view res/layout/editor_bg_fg_list.xml #generated:15
+-keep class com.masdar.spen.bgfg.FileListView { <init>(...); }
+
+# view AndroidManifest.xml #generated:99
+-keep class com.masdar.spen.sammeditor.SPen_AnimationViewer { <init>(...); }
+
+# view AndroidManifest.xml #generated:93
+-keep class com.masdar.spen.sammeditor.SPen_SAMMEditor { <init>(...); }
+
+# view res/layout/tool_file_list.xml #generated:15
+-keep class com.masdar.spen.tools.ToolFileListView { <init>(...); }
+
+# view res/layout/activity_main.xml #generated:7
+-keep class com.masdar.webview.CustomizedWebView { <init>(...); }
+
+# view mdpi\res/layout-mdpi/sdk_example_mini_edit.xml #generated:76
+# view res/layout/example_eraser_animation.xml #generated:60
+# view res/layout/example_pengesture.xml #generated:95
+# view res/layout/example_signature_registration.xml #generated:25
+# view res/layout/example_signature_verification.xml #generated:28
+# view res/layout/example_spen_event.xml #generated:92
+# view res/layout/example_viewer_eraser.xml #generated:7
+# view res/layout/viewer_scratch.xml #generated:16
+# view res/layout/viewer_scratch.xml #generated:30
+# view res/layout/viewer_scratch.xml #generated:44
+# view tvdpi\res/layout-tvdpi/sdk_example_mini_edit.xml #generated:76
+# view xhdpi\res/layout-xhdpi/sdk_example_mini_edit.xml #generated:76
+-keep class com.samsung.spensdk.SCanvasView { <init>(...); }
+

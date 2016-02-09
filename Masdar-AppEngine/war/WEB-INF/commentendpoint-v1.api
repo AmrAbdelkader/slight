@@ -1,0 +1,231 @@
+{
+  "extends" : "thirdParty.api",
+  "abstract" : false,
+  "root" : "https://masdarengine.appspot.com/_ah/api",
+  "name" : "commentendpoint",
+  "version" : "v1",
+  "defaultVersion" : false,
+  "adapter" : {
+    "bns" : "https://masdarengine.appspot.com/_ah/spi",
+    "deadline" : 10.0,
+    "type" : "lily"
+  },
+  "auth" : {
+    "allowCookieAuth" : false
+  },
+  "frontendLimits" : {
+    "unregisteredUserQps" : -1,
+    "unregisteredQps" : -1,
+    "unregisteredDaily" : -1,
+    "rules" : [ ]
+  },
+  "cacheControl" : {
+    "type" : "no-cache",
+    "maxAge" : 0
+  },
+  "ownerDomain" : "masdar.com",
+  "ownerName" : "masdar.com",
+  "packagePath" : "entities",
+  "methods" : {
+    "commentendpoint.updateComment" : {
+      "path" : "comment",
+      "httpMethod" : "PUT",
+      "scopes" : [ ],
+      "audiences" : [ ],
+      "clientIds" : [ ],
+      "rosyMethod" : "com.masdar.entities.CommentEndpoint.updateComment",
+      "request" : {
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "commentendpoint.insertComment" : {
+      "path" : "comment",
+      "httpMethod" : "POST",
+      "scopes" : [ ],
+      "audiences" : [ ],
+      "clientIds" : [ ],
+      "rosyMethod" : "com.masdar.entities.CommentEndpoint.insertComment",
+      "request" : {
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "commentendpoint.getComment" : {
+      "path" : "comment/{id}",
+      "httpMethod" : "GET",
+      "scopes" : [ ],
+      "audiences" : [ ],
+      "clientIds" : [ ],
+      "rosyMethod" : "com.masdar.entities.CommentEndpoint.getComment",
+      "request" : {
+        "parameters" : {
+          "id" : {
+            "type" : "int64",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "commentendpoint.removeComment" : {
+      "path" : "comment/{id}",
+      "httpMethod" : "DELETE",
+      "scopes" : [ ],
+      "audiences" : [ ],
+      "clientIds" : [ ],
+      "rosyMethod" : "com.masdar.entities.CommentEndpoint.removeComment",
+      "request" : {
+        "parameters" : {
+          "id" : {
+            "type" : "int64",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "empty"
+      }
+    },
+    "commentendpoint.getCommentByIdeaId" : {
+      "path" : "collectionresponse_comment/{ideaId}",
+      "httpMethod" : "GET",
+      "scopes" : [ ],
+      "audiences" : [ ],
+      "clientIds" : [ ],
+      "rosyMethod" : "com.masdar.entities.CommentEndpoint.getCommentByIdeaId",
+      "request" : {
+        "parameters" : {
+          "ideaId" : {
+            "type" : "int64",
+            "required" : true
+          },
+          "cursor" : {
+            "type" : "string",
+            "required" : false
+          },
+          "limit" : {
+            "type" : "int32",
+            "required" : false
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "commentendpoint.listComment" : {
+      "path" : "comment",
+      "httpMethod" : "GET",
+      "scopes" : [ ],
+      "audiences" : [ ],
+      "clientIds" : [ ],
+      "rosyMethod" : "com.masdar.entities.CommentEndpoint.listComment",
+      "request" : {
+        "parameters" : {
+          "cursor" : {
+            "type" : "string",
+            "required" : false
+          },
+          "limit" : {
+            "type" : "int32",
+            "required" : false
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    }
+  },
+  "descriptor" : {
+    "schemas" : {
+      "Comment" : {
+        "id" : "Comment",
+        "type" : "object",
+        "properties" : {
+          "comment_id" : {
+            "type" : "string",
+            "format" : "int64"
+          },
+          "idea_id" : {
+            "type" : "string",
+            "format" : "int64"
+          },
+          "user_id" : {
+            "type" : "string",
+            "format" : "int64"
+          },
+          "comment_text" : {
+            "type" : "string"
+          },
+          "comment_date" : {
+            "type" : "string"
+          }
+        }
+      },
+      "CollectionResponse_Comment" : {
+        "id" : "CollectionResponse_Comment",
+        "type" : "object",
+        "properties" : {
+          "items" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "Comment"
+            }
+          },
+          "nextPageToken" : {
+            "type" : "string"
+          }
+        }
+      }
+    },
+    "methods" : {
+      "com.masdar.entities.CommentEndpoint.updateComment" : {
+        "request" : {
+          "$ref" : "Comment"
+        },
+        "response" : {
+          "$ref" : "Comment"
+        }
+      },
+      "com.masdar.entities.CommentEndpoint.insertComment" : {
+        "request" : {
+          "$ref" : "Comment"
+        },
+        "response" : {
+          "$ref" : "Comment"
+        }
+      },
+      "com.masdar.entities.CommentEndpoint.getComment" : {
+        "response" : {
+          "$ref" : "Comment"
+        }
+      },
+      "com.masdar.entities.CommentEndpoint.removeComment" : {
+      },
+      "com.masdar.entities.CommentEndpoint.getCommentByIdeaId" : {
+        "response" : {
+          "$ref" : "CollectionResponse_Comment"
+        }
+      },
+      "com.masdar.entities.CommentEndpoint.listComment" : {
+        "response" : {
+          "$ref" : "CollectionResponse_Comment"
+        }
+      }
+    }
+  }
+}

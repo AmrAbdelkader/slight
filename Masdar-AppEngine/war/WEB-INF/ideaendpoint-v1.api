@@ -1,0 +1,329 @@
+{
+  "extends" : "thirdParty.api",
+  "abstract" : false,
+  "root" : "https://masdarengine.appspot.com/_ah/api",
+  "name" : "ideaendpoint",
+  "version" : "v1",
+  "defaultVersion" : false,
+  "adapter" : {
+    "bns" : "https://masdarengine.appspot.com/_ah/spi",
+    "deadline" : 10.0,
+    "type" : "lily"
+  },
+  "auth" : {
+    "allowCookieAuth" : false
+  },
+  "frontendLimits" : {
+    "unregisteredUserQps" : -1,
+    "unregisteredQps" : -1,
+    "unregisteredDaily" : -1,
+    "rules" : [ ]
+  },
+  "cacheControl" : {
+    "type" : "no-cache",
+    "maxAge" : 0
+  },
+  "ownerDomain" : "masdar.com",
+  "ownerName" : "masdar.com",
+  "packagePath" : "entities",
+  "methods" : {
+    "ideaendpoint.voteUp" : {
+      "path" : "voteUp/{ideaId}/{userId}",
+      "httpMethod" : "POST",
+      "scopes" : [ ],
+      "audiences" : [ ],
+      "clientIds" : [ ],
+      "rosyMethod" : "com.masdar.entities.IdeaEndpoint.voteUp",
+      "request" : {
+        "parameters" : {
+          "ideaId" : {
+            "type" : "int64",
+            "required" : true
+          },
+          "userId" : {
+            "type" : "int64",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "ideaendpoint.insertIdea" : {
+      "path" : "idea",
+      "httpMethod" : "POST",
+      "scopes" : [ ],
+      "audiences" : [ ],
+      "clientIds" : [ ],
+      "rosyMethod" : "com.masdar.entities.IdeaEndpoint.insertIdea",
+      "request" : {
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "ideaendpoint.insertSocialIdea" : {
+      "path" : "idea/{usersIds}",
+      "httpMethod" : "POST",
+      "scopes" : [ ],
+      "audiences" : [ ],
+      "clientIds" : [ ],
+      "rosyMethod" : "com.masdar.entities.IdeaEndpoint.insertSocialIdea",
+      "request" : {
+        "parameters" : {
+          "usersIds" : {
+            "type" : "string",
+            "required" : true
+          }
+        },
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "ideaendpoint.getIdea" : {
+      "path" : "idea/{id}",
+      "httpMethod" : "GET",
+      "scopes" : [ ],
+      "audiences" : [ ],
+      "clientIds" : [ ],
+      "rosyMethod" : "com.masdar.entities.IdeaEndpoint.getIdea",
+      "request" : {
+        "parameters" : {
+          "id" : {
+            "type" : "int64",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "ideaendpoint.listIdea" : {
+      "path" : "idea",
+      "httpMethod" : "GET",
+      "scopes" : [ ],
+      "audiences" : [ ],
+      "clientIds" : [ ],
+      "rosyMethod" : "com.masdar.entities.IdeaEndpoint.listIdea",
+      "request" : {
+        "parameters" : {
+          "cursor" : {
+            "type" : "string",
+            "required" : false
+          },
+          "limit" : {
+            "type" : "int32",
+            "required" : false
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "ideaendpoint.updateSocialIdea" : {
+      "path" : "udpateSocialIdea",
+      "httpMethod" : "PUT",
+      "scopes" : [ ],
+      "audiences" : [ ],
+      "clientIds" : [ ],
+      "rosyMethod" : "com.masdar.entities.IdeaEndpoint.updateSocialIdea",
+      "request" : {
+        "parameters" : {
+          "socialIdeaUserId" : {
+            "type" : "int64",
+            "required" : true
+          }
+        },
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "ideaendpoint.removeIdea" : {
+      "path" : "idea/{id}",
+      "httpMethod" : "DELETE",
+      "scopes" : [ ],
+      "audiences" : [ ],
+      "clientIds" : [ ],
+      "rosyMethod" : "com.masdar.entities.IdeaEndpoint.removeIdea",
+      "request" : {
+        "parameters" : {
+          "id" : {
+            "type" : "int64",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "empty"
+      }
+    },
+    "ideaendpoint.voteDown" : {
+      "path" : "voteDown/{ideaId}/{userId}",
+      "httpMethod" : "POST",
+      "scopes" : [ ],
+      "audiences" : [ ],
+      "clientIds" : [ ],
+      "rosyMethod" : "com.masdar.entities.IdeaEndpoint.voteDown",
+      "request" : {
+        "parameters" : {
+          "ideaId" : {
+            "type" : "int64",
+            "required" : true
+          },
+          "userId" : {
+            "type" : "int64",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "ideaendpoint.updateIdea" : {
+      "path" : "idea",
+      "httpMethod" : "PUT",
+      "scopes" : [ ],
+      "audiences" : [ ],
+      "clientIds" : [ ],
+      "rosyMethod" : "com.masdar.entities.IdeaEndpoint.updateIdea",
+      "request" : {
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    }
+  },
+  "descriptor" : {
+    "schemas" : {
+      "TransactionResponse" : {
+        "id" : "TransactionResponse",
+        "type" : "object",
+        "properties" : {
+          "errMessage" : {
+            "type" : "string"
+          },
+          "valid" : {
+            "type" : "boolean"
+          }
+        }
+      },
+      "Idea" : {
+        "id" : "Idea",
+        "type" : "object",
+        "properties" : {
+          "idea_id" : {
+            "type" : "string",
+            "format" : "int64"
+          },
+          "idea_header" : {
+            "type" : "string"
+          },
+          "idea_type" : {
+            "type" : "integer"
+          },
+          "idea_blob_key" : {
+            "type" : "string"
+          },
+          "user_id" : {
+            "type" : "string",
+            "format" : "int64"
+          },
+          "voting_number" : {
+            "type" : "string",
+            "format" : "int64"
+          }
+        }
+      },
+      "CollectionResponse_Idea" : {
+        "id" : "CollectionResponse_Idea",
+        "type" : "object",
+        "properties" : {
+          "items" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "Idea"
+            }
+          },
+          "nextPageToken" : {
+            "type" : "string"
+          }
+        }
+      }
+    },
+    "methods" : {
+      "com.masdar.entities.IdeaEndpoint.voteUp" : {
+        "response" : {
+          "$ref" : "TransactionResponse"
+        }
+      },
+      "com.masdar.entities.IdeaEndpoint.insertIdea" : {
+        "request" : {
+          "$ref" : "Idea"
+        },
+        "response" : {
+          "$ref" : "Idea"
+        }
+      },
+      "com.masdar.entities.IdeaEndpoint.insertSocialIdea" : {
+        "request" : {
+          "$ref" : "Idea"
+        },
+        "response" : {
+          "$ref" : "Idea"
+        }
+      },
+      "com.masdar.entities.IdeaEndpoint.getIdea" : {
+        "response" : {
+          "$ref" : "Idea"
+        }
+      },
+      "com.masdar.entities.IdeaEndpoint.listIdea" : {
+        "response" : {
+          "$ref" : "CollectionResponse_Idea"
+        }
+      },
+      "com.masdar.entities.IdeaEndpoint.updateSocialIdea" : {
+        "request" : {
+          "$ref" : "Idea"
+        },
+        "response" : {
+          "$ref" : "Idea"
+        }
+      },
+      "com.masdar.entities.IdeaEndpoint.removeIdea" : {
+      },
+      "com.masdar.entities.IdeaEndpoint.voteDown" : {
+        "response" : {
+          "$ref" : "TransactionResponse"
+        }
+      },
+      "com.masdar.entities.IdeaEndpoint.updateIdea" : {
+        "request" : {
+          "$ref" : "Idea"
+        },
+        "response" : {
+          "$ref" : "Idea"
+        }
+      }
+    }
+  }
+}

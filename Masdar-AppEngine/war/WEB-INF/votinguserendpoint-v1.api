@@ -1,0 +1,228 @@
+{
+  "extends" : "thirdParty.api",
+  "abstract" : false,
+  "root" : "https://masdarengine.appspot.com/_ah/api",
+  "name" : "votinguserendpoint",
+  "version" : "v1",
+  "defaultVersion" : false,
+  "adapter" : {
+    "bns" : "https://masdarengine.appspot.com/_ah/spi",
+    "deadline" : 10.0,
+    "type" : "lily"
+  },
+  "auth" : {
+    "allowCookieAuth" : false
+  },
+  "frontendLimits" : {
+    "unregisteredUserQps" : -1,
+    "unregisteredQps" : -1,
+    "unregisteredDaily" : -1,
+    "rules" : [ ]
+  },
+  "cacheControl" : {
+    "type" : "no-cache",
+    "maxAge" : 0
+  },
+  "ownerDomain" : "masdar.com",
+  "ownerName" : "masdar.com",
+  "packagePath" : "entities",
+  "methods" : {
+    "votinguserendpoint.getVotesUsersByIdeaId" : {
+      "path" : "collectionresponse_votinguser/{ideaId}",
+      "httpMethod" : "GET",
+      "scopes" : [ ],
+      "audiences" : [ ],
+      "clientIds" : [ ],
+      "rosyMethod" : "com.masdar.entities.VotingUserEndpoint.getVotesUsersByIdeaId",
+      "request" : {
+        "parameters" : {
+          "ideaId" : {
+            "type" : "int64",
+            "required" : true
+          },
+          "cursor" : {
+            "type" : "string",
+            "required" : false
+          },
+          "limit" : {
+            "type" : "int32",
+            "required" : false
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "votinguserendpoint.listVotingUser" : {
+      "path" : "votinguser",
+      "httpMethod" : "GET",
+      "scopes" : [ ],
+      "audiences" : [ ],
+      "clientIds" : [ ],
+      "rosyMethod" : "com.masdar.entities.VotingUserEndpoint.listVotingUser",
+      "request" : {
+        "parameters" : {
+          "cursor" : {
+            "type" : "string",
+            "required" : false
+          },
+          "limit" : {
+            "type" : "int32",
+            "required" : false
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "votinguserendpoint.updateVotingUser" : {
+      "path" : "votinguser",
+      "httpMethod" : "PUT",
+      "scopes" : [ ],
+      "audiences" : [ ],
+      "clientIds" : [ ],
+      "rosyMethod" : "com.masdar.entities.VotingUserEndpoint.updateVotingUser",
+      "request" : {
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "votinguserendpoint.removeVotingUser" : {
+      "path" : "votinguser/{id}",
+      "httpMethod" : "DELETE",
+      "scopes" : [ ],
+      "audiences" : [ ],
+      "clientIds" : [ ],
+      "rosyMethod" : "com.masdar.entities.VotingUserEndpoint.removeVotingUser",
+      "request" : {
+        "parameters" : {
+          "id" : {
+            "type" : "int64",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "empty"
+      }
+    },
+    "votinguserendpoint.getVotingUser" : {
+      "path" : "votinguser/{id}",
+      "httpMethod" : "GET",
+      "scopes" : [ ],
+      "audiences" : [ ],
+      "clientIds" : [ ],
+      "rosyMethod" : "com.masdar.entities.VotingUserEndpoint.getVotingUser",
+      "request" : {
+        "parameters" : {
+          "id" : {
+            "type" : "int64",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "votinguserendpoint.insertVotingUser" : {
+      "path" : "votinguser",
+      "httpMethod" : "POST",
+      "scopes" : [ ],
+      "audiences" : [ ],
+      "clientIds" : [ ],
+      "rosyMethod" : "com.masdar.entities.VotingUserEndpoint.insertVotingUser",
+      "request" : {
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    }
+  },
+  "descriptor" : {
+    "schemas" : {
+      "CollectionResponse_VotingUser" : {
+        "id" : "CollectionResponse_VotingUser",
+        "type" : "object",
+        "properties" : {
+          "items" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "VotingUser"
+            }
+          },
+          "nextPageToken" : {
+            "type" : "string"
+          }
+        }
+      },
+      "VotingUser" : {
+        "id" : "VotingUser",
+        "type" : "object",
+        "properties" : {
+          "vote_id" : {
+            "type" : "string",
+            "format" : "int64"
+          },
+          "vote_user_id" : {
+            "type" : "string",
+            "format" : "int64"
+          },
+          "vote_idea_id" : {
+            "type" : "string",
+            "format" : "int64"
+          },
+          "vote_type" : {
+            "type" : "integer"
+          }
+        }
+      }
+    },
+    "methods" : {
+      "com.masdar.entities.VotingUserEndpoint.getVotesUsersByIdeaId" : {
+        "response" : {
+          "$ref" : "CollectionResponse_VotingUser"
+        }
+      },
+      "com.masdar.entities.VotingUserEndpoint.listVotingUser" : {
+        "response" : {
+          "$ref" : "CollectionResponse_VotingUser"
+        }
+      },
+      "com.masdar.entities.VotingUserEndpoint.updateVotingUser" : {
+        "request" : {
+          "$ref" : "VotingUser"
+        },
+        "response" : {
+          "$ref" : "VotingUser"
+        }
+      },
+      "com.masdar.entities.VotingUserEndpoint.removeVotingUser" : {
+      },
+      "com.masdar.entities.VotingUserEndpoint.getVotingUser" : {
+        "response" : {
+          "$ref" : "VotingUser"
+        }
+      },
+      "com.masdar.entities.VotingUserEndpoint.insertVotingUser" : {
+        "request" : {
+          "$ref" : "VotingUser"
+        },
+        "response" : {
+          "$ref" : "VotingUser"
+        }
+      }
+    }
+  }
+}

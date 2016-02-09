@@ -1,0 +1,207 @@
+{
+ "kind": "discovery#rpcDescription",
+ "etag": "\"ykhqEJ_LDFBNzs2RnXtIc2-QyAc/zWSA2_Drn0HIFDApJ9GCW2SMjbQ\"",
+ "discoveryVersion": "v1",
+ "id": "testentityendpoint:v1",
+ "name": "testentityendpoint",
+ "version": "v1",
+ "description": "This is an API",
+ "ownerDomain": "masdar.com",
+ "ownerName": "masdar.com",
+ "packagePath": "entities",
+ "icons": {
+  "x16": "http://www.google.com/images/icons/product/search-16.gif",
+  "x32": "http://www.google.com/images/icons/product/search-32.gif"
+ },
+ "protocol": "rpc",
+ "rootUrl": "https://masdarengine.appspot.com/_ah/api/",
+ "rpcUrl": "https://masdarengine.appspot.com/_ah/api/rpc",
+ "rpcPath": "/_ah/api/rpc",
+ "parameters": {
+  "alt": {
+   "type": "string",
+   "description": "Data format for the response.",
+   "default": "json",
+   "enum": [
+    "json"
+   ],
+   "enumDescriptions": [
+    "Responses with Content-Type of application/json"
+   ],
+   "location": "query"
+  },
+  "fields": {
+   "type": "string",
+   "description": "Selector specifying which fields to include in a partial response.",
+   "location": "query"
+  },
+  "key": {
+   "type": "string",
+   "description": "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.",
+   "location": "query"
+  },
+  "oauth_token": {
+   "type": "string",
+   "description": "OAuth 2.0 token for the current user.",
+   "location": "query"
+  },
+  "prettyPrint": {
+   "type": "boolean",
+   "description": "Returns response with indentations and line breaks.",
+   "default": "true",
+   "location": "query"
+  },
+  "quotaUser": {
+   "type": "string",
+   "description": "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.",
+   "location": "query"
+  },
+  "userIp": {
+   "type": "string",
+   "description": "IP address of the site where the request originates. Use this if you want to enforce per-user limits.",
+   "location": "query"
+  }
+ },
+ "schemas": {
+  "CollectionResponse_TestEntity": {
+   "id": "CollectionResponse_TestEntity",
+   "type": "object",
+   "properties": {
+    "items": {
+     "type": "array",
+     "items": {
+      "$ref": "TestEntity"
+     }
+    },
+    "nextPageToken": {
+     "type": "string"
+    }
+   }
+  },
+  "TestEntity": {
+   "id": "TestEntity",
+   "type": "object",
+   "properties": {
+    "entity_id": {
+     "type": "string",
+     "format": "int64"
+    },
+    "user_object": {
+     "$ref": "User"
+    }
+   }
+  },
+  "User": {
+   "id": "User",
+   "type": "object",
+   "properties": {
+    "device_id": {
+     "type": "string"
+    },
+    "email": {
+     "type": "string"
+    },
+    "fb_id": {
+     "type": "string",
+     "format": "int64"
+    },
+    "gplus_id": {
+     "type": "string",
+     "format": "int64"
+    },
+    "join_date": {
+     "type": "string"
+    },
+    "mob_no": {
+     "type": "string"
+    },
+    "profile_pic": {
+     "type": "string"
+    },
+    "user_id": {
+     "type": "string",
+     "format": "int64"
+    },
+    "user_name": {
+     "type": "string"
+    }
+   }
+  }
+ },
+ "methods": {
+  "testentityendpoint.getTestEntity": {
+   "id": "testentityendpoint.getTestEntity",
+   "allowGet": true,
+   "parameters": {
+    "id": {
+     "type": "string",
+     "required": true,
+     "format": "int64"
+    }
+   },
+   "parameterOrder": [
+    "id"
+   ],
+   "returns": {
+    "$ref": "TestEntity"
+   }
+  },
+  "testentityendpoint.insertTestEntity": {
+   "id": "testentityendpoint.insertTestEntity",
+   "parameters": {
+    "resource": {
+     "$ref": "TestEntity"
+    }
+   },
+   "parameterOrder": [
+    "resource"
+   ],
+   "returns": {
+    "$ref": "TestEntity"
+   }
+  },
+  "testentityendpoint.listTestEntity": {
+   "id": "testentityendpoint.listTestEntity",
+   "allowGet": true,
+   "parameters": {
+    "cursor": {
+     "type": "string"
+    },
+    "limit": {
+     "type": "integer",
+     "format": "int32"
+    }
+   },
+   "returns": {
+    "$ref": "CollectionResponse_TestEntity"
+   }
+  },
+  "testentityendpoint.removeTestEntity": {
+   "id": "testentityendpoint.removeTestEntity",
+   "parameters": {
+    "id": {
+     "type": "string",
+     "required": true,
+     "format": "int64"
+    }
+   },
+   "parameterOrder": [
+    "id"
+   ]
+  },
+  "testentityendpoint.updateTestEntity": {
+   "id": "testentityendpoint.updateTestEntity",
+   "parameters": {
+    "resource": {
+     "$ref": "TestEntity"
+    }
+   },
+   "parameterOrder": [
+    "resource"
+   ],
+   "returns": {
+    "$ref": "TestEntity"
+   }
+  }
+ }
+}
